@@ -5,14 +5,20 @@ class WeighingMachine
     private readonly int precision;
     private double weight;
 
-    public WeighingMachine(int precision) => this.Precision = precision;
+    public WeighingMachine(int precision)
+    {
+        Precision = precision;
+    }
 
     public int Precision
     {
         get => precision;
         private init
         {
-            if (value < 0) throw new ArgumentOutOfRangeException($"Precision cannot be negative {value}.");
+            if (value < 0)
+            {
+                throw new ArgumentOutOfRangeException($"Precision cannot be negative {value}.");
+            }
             precision = value;
         }
     }
@@ -22,7 +28,10 @@ class WeighingMachine
         get => weight;
         set
         {
-            if (value < 0) throw new ArgumentOutOfRangeException($"Weight cannot be negative {value}.");
+            if (value < 0)
+            {
+                throw new ArgumentOutOfRangeException($"Weight cannot be negative {value}.");
+            }
             weight = value;
         }
     }
