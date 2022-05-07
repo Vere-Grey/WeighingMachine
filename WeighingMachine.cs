@@ -4,7 +4,6 @@ class WeighingMachine
 {
     private int precision;
     private double weight;
-    private double tareAdjustment = 5;
 
     public WeighingMachine(int precision)
     {
@@ -33,9 +32,5 @@ class WeighingMachine
 
     public string DisplayWeight => $"{(Weight - TareAdjustment).ToString($"f{Precision}")} kg";
 
-    public double TareAdjustment
-    {
-        get => tareAdjustment;
-        set => tareAdjustment = value;
-    }
+    public double TareAdjustment { get; set; } = 5;
 }
