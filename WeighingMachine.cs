@@ -2,18 +2,15 @@ using System;
 
 class WeighingMachine
 {
-    private int precision;
+    private readonly int precision;
     private double weight;
 
-    public WeighingMachine(int precision)
-    {
-        Precision = precision;
-    }
+    public WeighingMachine(int precision) => this.Precision = precision;
 
     public int Precision
     {
         get => precision;
-        set
+        private init
         {
             if (value < 0) throw new ArgumentOutOfRangeException($"Precision cannot be negative {value}.");
             precision = value;
